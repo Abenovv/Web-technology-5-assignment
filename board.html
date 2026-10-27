@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple study board built from a JavaScript array.">
+  <title>Study board | Assignment 5</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/task2.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Assignment 5</a>
+      <p class="student-info">Yerkebulan Abenov <span>IT-2511</span></p>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Higher or Lower</a>
+      <a href="board.html" aria-current="page">Study board</a>
+      <a href="character.html">Character creator</a>
+    </nav>
+  </header>
+
+  <main class="page page-wide">
+    <div class="page-heading">
+      <p class="eyebrow">Task 2 - Option A</p>
+      <h1>Study board</h1>
+      <p>Move study tasks between the three columns. Keep no more than three tasks in progress.</p>
+    </div>
+
+    <section class="panel" aria-label="Board controls">
+      <div class="board-controls">
+        <div class="field">
+          <label for="task-search">Search tasks</label>
+          <input id="task-search" type="search" placeholder="Search by title or step">
+        </div>
+        <div class="field">
+          <label for="tag-filter">Tag</label>
+          <select id="tag-filter"></select>
+        </div>
+        <div class="field">
+          <label for="priority-sort">Sort by priority</label>
+          <select id="priority-sort">
+            <option value="high">High to low</option>
+            <option value="low">Low to high</option>
+          </select>
+        </div>
+      </div>
+      <div class="board-progress">
+        <label for="board-progress">Finished tasks</label>
+        <progress id="board-progress"></progress>
+        <p id="board-summary" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <p id="board-message" class="message is-neutral" role="status" aria-live="polite"></p>
+    <p id="board-empty" class="empty-state" hidden></p>
+    <div id="board" class="board" aria-label="Study tasks"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Yerkebulan Abenov | IT-2511 | Web Technologies</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Creator | Assignment 5</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/task3.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Assignment 5</a>
+      <p class="student-info">Yerkebulan Abenov <span>IT-2511</span></p>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html">Higher or Lower</a>
+      <a href="board.html">Study board</a>
+      <a href="character.html" aria-current="page">Character creator</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="page-heading">
+      <p class="eyebrow">Task 3 - Option B</p>
+      <h1>Character creator</h1>
+      <p>Choose a name and class, then share 20 points between four skills.</p>
+    </div>
+
+    <div class="character-layout">
+      <section class="panel" aria-labelledby="form-heading">
+        <h2 id="form-heading">Build your character</h2>
+        <p class="form-rules">Each skill needs 1 to 10 points. Use exactly 20 points in total.</p>
+        <p class="form-rules">The main skill needs at least 6 points and cannot be lower than another skill: strength for a Warrior, magic for a Mage, and speed for a Ranger.</p>
+
+        <form id="character-form">
+          <p id="form-summary" class="message is-error" role="alert" hidden></p>
+
+          <div class="form-grid">
+            <div class="field field-full">
+              <label for="character-name">Character name</label>
+              <input id="character-name" name="characterName" type="text" required minlength="2" maxlength="20" autocomplete="off" aria-describedby="name-help character-name-error">
+              <p id="name-help" class="field-help">Taken names: <span id="taken-names">Atlas, Luna, Shadow</span>. Use a different name.</p>
+              <p id="character-name-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="character-class">Class</label>
+              <select id="character-class" name="characterClass" required aria-describedby="character-class-error">
+                <option value="warrior">Warrior</option>
+                <option value="mage">Mage</option>
+                <option value="ranger">Ranger</option>
+              </select>
+              <p id="character-class-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="character-color">Color</label>
+              <select id="character-color" name="characterColor" required aria-describedby="character-color-error">
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="red">Red</option>
+              </select>
+              <p id="character-color-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="strength">Strength</label>
+              <input id="strength" name="strength" type="number" min="1" max="10" step="1" value="6" required aria-describedby="strength-error">
+              <p id="strength-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="defense">Defense</label>
+              <input id="defense" name="defense" type="number" min="1" max="10" step="1" value="5" required aria-describedby="defense-error">
+              <p id="defense-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="magic">Magic</label>
+              <input id="magic" name="magic" type="number" min="1" max="10" step="1" value="4" required aria-describedby="magic-error">
+              <p id="magic-error" class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="speed">Speed</label>
+              <input id="speed" name="speed" type="number" min="1" max="10" step="1" value="5" required aria-describedby="speed-error">
+              <p id="speed-error" class="field-error" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button class="button" type="submit">Create character</button>
+            <button id="reset-character" class="button button-secondary" type="button">Reset form</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="character-sidebar" aria-label="Character preview and result">
+        <section class="panel preview-panel" aria-labelledby="preview-heading">
+          <h2 id="preview-heading">Live preview</h2>
+          <div id="character-preview" class="character-card color-blue">
+            <h3 id="preview-name">Your character</h3>
+            <p id="preview-class">Warrior</p>
+            <div class="skill-grid">
+              <p><span>Strength</span><strong id="preview-strength">6</strong></p>
+              <p><span>Defense</span><strong id="preview-defense">5</strong></p>
+              <p><span>Magic</span><strong id="preview-magic">4</strong></p>
+              <p><span>Speed</span><strong id="preview-speed">5</strong></p>
+            </div>
+          </div>
+          <p id="points-counter" class="points-counter" role="status">Points used: 20 / 20. Points left: 0.</p>
+          <p class="field-help">The preview changes as you type. A final card is created only when all fields are correct.</p>
+        </section>
+        <section id="character-result" class="panel result-panel" aria-live="polite" tabindex="-1" hidden></section>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

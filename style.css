@@ -1,0 +1,682 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    color: #202938;
+    background: #f4f6f8;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    color: #2459a6;
+}
+
+button, input, select {
+    font: inherit;
+}
+
+button, a, input, select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #e2a324;
+    outline-offset: 3px;
+}
+
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #dce1e7;
+}
+
+.header-inner, .nav {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 76px;
+}
+
+.brand {
+    color: #202938;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.student-info {
+    margin: 0;
+    font-size: 14px;
+    text-align: right;
+}
+
+.student-info span {
+    margin-left: 12px;
+    color: #596579;
+}
+
+.nav {
+    display: flex;
+    gap: 26px;
+}
+
+.nav a {
+    padding: 12px 0;
+    color: #4c596b;
+    border-bottom: 3px solid transparent;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: #174c96;
+}
+
+.nav a[aria-current="page"] {
+    border-bottom-color: #2459a6;
+    color: #174c96;
+    font-weight: bold;
+}
+
+.page {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 32px 24px 48px;
+}
+
+.page-wide {
+    max-width: 1160px;
+}
+
+.page-heading {
+    margin-bottom: 24px;
+}
+
+.eyebrow {
+    margin: 0 0 6px;
+    color: #496582;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+h1 {
+    margin: 0 0 8px;
+    color: #182333;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+h2 {
+    margin: 0 0 14px;
+    color: #182333;
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+}
+
+p {
+    margin: 0 0 14px;
+}
+
+.page-heading > p:last-child, .lead {
+    margin-bottom: 0;
+    color: #526075;
+}
+
+.panel {
+    min-width: 0;
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #dce1e7;
+    border-radius: 8px;
+}
+
+.button-row, .card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.button, button {
+    display: inline-block;
+    min-height: 42px;
+    padding: 9px 18px;
+    border: 1px solid #2459a6;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #2459a6;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover, button:hover {
+    background: #194581;
+    border-color: #194581;
+}
+
+.button-secondary {
+    color: #2d4563;
+    border-color: #becbd9;
+    background: #ffffff;
+}
+
+.button-secondary:hover {
+    background: #eaf0f6;
+    border-color: #829bb8;
+}
+
+button:disabled, .button:disabled {
+    color: #6f7784;
+    background: #e9edf1;
+    border-color: #d6dce3;
+    cursor: not-allowed;
+}
+
+.message {
+    margin: 18px 0 0;
+    padding: 12px 14px;
+    border: 1px solid #cbd8e6;
+    border-radius: 5px;
+    color: #304e6b;
+    background: #f0f5fa;
+}
+
+.message:empty {
+    display: none;
+}
+
+.is-neutral {
+    color: #304e6b;
+    border-color: #cbd8e6;
+    background: #f0f5fa;
+}
+
+.is-success {
+    color: #205c3b;
+    border-color: #b2d6bf;
+    background: #edf8f0;
+}
+
+.is-error {
+    color: #9b2930;
+    border-color: #e8b7ba;
+    background: #fff1f1;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.stat {
+    padding: 12px;
+    background: #f4f6f8;
+    border: 1px solid #e0e5eb;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.stat strong, .stat .stat-value {
+    display: block;
+    font-size: 25px;
+}
+
+.stat span, .stat .stat-label {
+    color: #526075;
+    font-size: 14px;
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+    gap: 24px;
+}
+
+.number-display, .current-number {
+    margin: 12px 0;
+    color: #2459a6;
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.game-panel {
+    text-align: center;
+}
+
+.game-panel .button-row {
+    justify-content: center;
+}
+
+.number-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 20px 0 24px;
+}
+
+.number-box {
+    padding: 16px 8px;
+    border: 1px solid #dce1e7;
+    border-radius: 5px;
+    background: #f8f9fb;
+}
+
+.number-box span {
+    display: block;
+    color: #596579;
+    font-size: 14px;
+}
+
+.number-box strong {
+    display: block;
+    font-size: 52px;
+    line-height: 1.3;
+}
+
+.current-number-box {
+    color: #2459a6;
+    border-color: #adc4e0;
+    background: #eff5fd;
+}
+
+.is-game-over {
+    border-color: #dba6aa;
+}
+
+.rules-list, .rules-panel ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.rules-list li, .rules-panel li {
+    margin-bottom: 10px;
+}
+
+.small-text, .help-text, .field-hint, .muted {
+    color: #596579;
+    font-size: 14px;
+}
+
+label, .field-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding: 8px 10px;
+    color: #202938;
+    background: #ffffff;
+    border: 1px solid #aebdce;
+    border-radius: 4px;
+}
+
+input[aria-invalid="true"], select[aria-invalid="true"] {
+    border-color: #bc3841;
+    background: #fff8f8;
+}
+
+.board-controls, .controls-grid, .filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 16px;
+}
+
+.board-summary, .progress-section {
+    margin-top: 20px;
+}
+
+progress {
+    display: block;
+    width: 100%;
+    height: 12px;
+    margin-top: 8px;
+    accent-color: #2b8252;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.board-column {
+    min-width: 0;
+    padding: 14px;
+    background: #eaf0f5;
+    border: 1px solid #dce4ed;
+    border-radius: 7px;
+}
+
+.board-column > h2 {
+    margin-bottom: 14px;
+    font-size: 18px;
+}
+
+.task-card {
+    margin-bottom: 12px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #d4dfe9;
+    border-radius: 5px;
+}
+
+.task-card:last-child {
+    margin-bottom: 0;
+}
+
+.task-card h3 {
+    overflow-wrap: anywhere;
+    font-size: 16px;
+}
+
+.task-card p {
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.tag, .priority, .required-label {
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: #34536f;
+    background: #eaf1f8;
+    font-size: 12px;
+}
+
+.priority-high {
+    color: #90420c;
+    background: #fff0df;
+}
+
+.priority-3 {
+    color: #90420c;
+    background: #fff0df;
+}
+
+.priority-1 {
+    color: #48624d;
+    background: #edf5ef;
+}
+
+.task-required {
+    color: #596579;
+    font-size: 12px;
+}
+
+.task-card.is-done {
+    border-color: #9dc3ad;
+}
+
+.column-empty {
+    margin: 0;
+    padding: 12px 4px;
+    color: #596579;
+    font-size: 14px;
+}
+
+.board-progress p {
+    margin: 10px 0 0;
+    color: #526075;
+    font-size: 14px;
+}
+
+.card-actions {
+    gap: 6px;
+}
+
+.card-actions button {
+    flex: 1;
+    min-height: 36px;
+    padding: 6px 8px;
+    font-size: 12px;
+}
+
+.empty-state {
+    padding: 16px;
+    color: #596579;
+    border: 1px dashed #aebdce;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.character-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    align-items: start;
+    gap: 24px;
+}
+
+.form-grid, .skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 18px;
+}
+
+.field {
+    min-width: 0;
+    margin-bottom: 12px;
+}
+
+.field-error {
+    margin: 5px 0 0;
+    color: #a52630;
+    font-size: 13px;
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.field-full {
+    grid-column: 1 / -1;
+}
+
+.field-help {
+    margin: 5px 0 0;
+    color: #596579;
+    font-size: 13px;
+}
+
+.form-rules {
+    margin: 0 0 12px;
+    color: #526075;
+    font-size: 14px;
+}
+
+.form-rules li {
+    margin-bottom: 5px;
+}
+
+.points-counter {
+    margin-bottom: 14px;
+    padding: 9px 12px;
+    border-radius: 4px;
+    background: #f0f5fa;
+    font-weight: bold;
+}
+
+.points-counter.is-error {
+    color: #9b2930;
+    background: #fff1f1;
+}
+
+.character-sidebar {
+    display: grid;
+    gap: 20px;
+    min-width: 0;
+}
+
+.result-panel .message {
+    margin: 0 0 16px;
+}
+
+.character-card .skill-grid span, .character-card .skill-grid strong {
+    display: block;
+}
+
+.character-card .skill-grid strong {
+    font-size: 20px;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 6px 0 18px;
+    padding: 16px;
+    border: 1px solid #dce1e7;
+    border-radius: 5px;
+}
+
+legend {
+    padding: 0 6px;
+    font-weight: bold;
+}
+
+.character-card {
+    margin-bottom: 16px;
+    padding: 20px;
+    border: 2px solid #90afd8;
+    border-radius: 7px;
+    background: #eff5fd;
+    overflow-wrap: anywhere;
+}
+
+.character-card h3 {
+    font-size: 24px;
+}
+
+.character-card .skill-grid {
+    margin-top: 16px;
+    gap: 8px;
+}
+
+.character-card .skill-grid p {
+    margin: 0;
+    padding: 8px;
+    background: #ffffff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.color-blue {
+    border-color: #90afd8;
+    background: #eff5fd;
+}
+
+.color-green {
+    border-color: #8abb9e;
+    background: #eff8f1;
+}
+
+.color-red {
+    border-color: #d9a1a1;
+    background: #fff1f1;
+}
+
+.site-footer {
+    margin: 16px auto 0;
+    padding: 24px;
+    color: #657185;
+    text-align: center;
+    font-size: 13px;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 760px) {
+    .header-inner {
+        min-height: 84px;
+    }
+
+    .student-info span {
+        display: block;
+        margin: 0;
+    }
+
+    .nav {
+        gap: 20px;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+
+    .page {
+        padding: 24px 16px 32px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+
+    .game-layout, .character-layout, .board, .board-controls, .controls-grid, .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .game-layout, .character-layout {
+        gap: 18px;
+    }
+
+    .board {
+        gap: 16px;
+    }
+
+    .stats {
+        gap: 8px;
+    }
+
+    .stat {
+        padding: 10px 6px;
+    }
+
+    .form-grid, .skill-grid {
+        gap: 12px;
+    }
+
+    .header-inner, .nav {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
